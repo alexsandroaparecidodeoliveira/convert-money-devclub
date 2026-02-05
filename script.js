@@ -1,18 +1,15 @@
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat
-
 const convertButton = document.querySelector(".convert-button")
 const currencySelect = document.querySelector(".currency-select")
 
 function convertValues() {
     const inputCurrencyValue = document.querySelector(".input-currency").value
-    const currencyValueToConvert = document.querySelector(".currency-value-to-convert") // Valor em Real
-    const currencyValueConverted = document.querySelector(".currency-value") // Outras moedas
+    const currencyValueToConvert = document.querySelector(".currency-value-to-convert") 
+    const currencyValueConverted = document.querySelector(".currency-value") 
 
     const dolarToday = 5.2
     const euroToday = 6.2
 
     if (currencySelect.value == "dolar") {
-        // Se o select estiver selecionado o valor de dolar, entre aqui
         currencyValueConverted.innerHTML = new Intl.NumberFormat("en-US", {
             style: "currency",
             currency: "USD"
@@ -20,7 +17,6 @@ function convertValues() {
     }
 
     if (currencySelect.value == "euro") {
-        // Se o select estiver selecionado o valor de euro, entre aqui
         currencyValueConverted.innerHTML = new Intl.NumberFormat("de-DE", {
             style: "currency",
             currency: "EUR"
